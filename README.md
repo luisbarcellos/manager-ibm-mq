@@ -2,15 +2,15 @@
 
 ### Passos para rodar o projeto
 ## 1- Subir filas no docker com os comandos abaixo.
-#### Comando para subir docker para o Simular fila Entrada de dados
+### Comando para subir docker para o Simular fila Entrada de dados
     docker run -d --env LICENSE=accept --env MQ_QMGR_NAME=QUEUE_IN -p 1414:1414 -p 9443:9443 --name queueIn ibmcom/mq
 
 ### Comando para subir docker para o Simular fila de Saída de dados
     docker run -d --env LICENSE=accept --env MQ_QMGR_NAME=QUEUE_OUT -p 1415:1414 -p 9444:9443 --name queueOut ibmcom/mq
 
-##2- Efetuar download do projeto.
+## 2- Efetuar download do projeto.
 
-##3- Entrar na pasta raiz do projeto pelo terminal e rodar o comando abaixo:
+## 3- Entrar na pasta raiz do projeto pelo terminal e rodar o comando abaixo:
     ./gradlew bootrun
 
 Obs.: Necessário acesso a rede para download das dependências.
