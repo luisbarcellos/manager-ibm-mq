@@ -1,3 +1,5 @@
 dependencies {
+    compile 'com.ibm.mq:mq-jms-spring-boot-starter:2.0.0'
+    compile 'org.springframework.boot:spring-boot-starter-web:2.0.5.RELEASE'
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.9.8'
 }
