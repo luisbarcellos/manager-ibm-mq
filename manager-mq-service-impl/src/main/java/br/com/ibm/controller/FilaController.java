@@ -17,7 +17,7 @@ public class FilaController {
     @PostMapping("simular/filain")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void simularCip(){
-        filaIbmService.simularFilaEntradaCip();
+        filaIbmService.simularFilaIn();
     }
 
     @PostMapping("transferir/filain-to-filaout")

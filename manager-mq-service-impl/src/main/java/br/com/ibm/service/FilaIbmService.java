@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public class FilaIbmService {
     private IntegracaoFacade integracaoFacade;
 
-    public void simularFilaEntradaCip(){
+    public void simularFilaIn(){
         integracaoFacade.simularFilaIn();
     }
 

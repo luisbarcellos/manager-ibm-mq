@@ -2,6 +2,7 @@ package br.com.ibm.facade;
 
 import br.com.ibm.config.IntegracaoPropertiesLoader;
 import br.com.ibm.exception.MensagemJmsException;
+import br.com.ibm.mock.MsgJmsStub;
 import br.com.ibm.service.IntegracaoServiceInJms;
 import lombok.AllArgsConstructor;
 
@@ -15,6 +16,18 @@ import java.util.stream.IntStream;
 public class IntegracaoFacadeJms {
     private IntegracaoPropertiesLoader integracaoPropertiesLoader;
     private IntegracaoServiceInJms integracaoServiceInJms;
+
+    public void simularFilaIn() {
+        try {
+            new ForkJoinPool(integracaoPropertiesLoader.getNumeroThreads()).submit(() ->
+                    IntStream.range(0, integracaoPropertiesLoader.getQtdInicialFilaIn())
+                            .parallel()
+                            .forEach(i -> integracaoServiceInJms.enviarMensagem(MsgJmsStub.getMsg())));
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new MensagemJmsException("Erro ao simular fila de entrada: " + e.getMessage());
+        }
+    }
 
     public List<String> buscarMensagensFilaInJms(Integer quantidade) {
         try {

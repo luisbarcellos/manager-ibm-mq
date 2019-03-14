@@ -16,6 +16,10 @@ import java.util.stream.Collectors;
 public class FilaIbmJmsService {
     private IntegracaoFacadeJms integracaoFacadeJms;
 
+    public void simularFilaIn(){
+        integracaoFacadeJms.simularFilaIn();
+    }
+
     public List<Mensagem> buscarMensagensFilaInJms(Integer quantidade) {
         return convertStringToObject()
                 .apply(buscarFilaInJms(quantidade));

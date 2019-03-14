@@ -3,6 +3,7 @@ package br.com.ibm.controller;
 import br.com.ibm.model.Mensagem;
 import br.com.ibm.service.FilaIbmJmsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +13,12 @@ import java.util.List;
 public class FilaJmsController {
     @Autowired
     private FilaIbmJmsService filaIbmJmsService;
+
+    @PostMapping("simular/filain")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void simularCip(){
+        filaIbmJmsService.simularFilaIn();
+    }
 
     @GetMapping("buscar/filain")
     @ResponseBody
