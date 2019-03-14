@@ -2,7 +2,7 @@ package br.com.ibm.facade;
 
 import br.com.ibm.Exception.MensagemException;
 import br.com.ibm.config.IntegracaoPropertiesLoader;
-import br.com.ibm.mock.MsgVirtualCobStub;
+import br.com.ibm.mock.MsgStub;
 import br.com.ibm.service.IntegracaoServiceIn;
 import br.com.ibm.service.IntegracaoServiceOut;
 import lombok.AllArgsConstructor;
@@ -25,7 +25,7 @@ public class IntegracaoFacade {
             new ForkJoinPool(integracaoPropertiesLoader.getNumeroThreads()).submit(() ->
                     IntStream.range(0, integracaoPropertiesLoader.getQtdInicialFilaIn())
                             .parallel()
-                            .forEach(i -> integracaoServiceIn.enviarMsg(MsgVirtualCobStub.getMsg())));
+                            .forEach(i -> integracaoServiceIn.enviarMsg(MsgStub.getMsg())));
         } catch (Exception e) {
             e.printStackTrace();
             throw new MensagemException("Erro ao simular fila de entrada: " + e.getMessage());
