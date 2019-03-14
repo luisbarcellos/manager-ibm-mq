@@ -1,7 +1,7 @@
 package br.com.ibm.service;
 
-import br.com.ibm.Exception.MensagemNotFoundException;
 import br.com.ibm.converter.XmlToObjectConverter;
+import br.com.ibm.exception.MensagemNotFoundException;
 import br.com.ibm.facade.IntegracaoFacade;
 import br.com.ibm.model.Mensagem;
 import lombok.AllArgsConstructor;

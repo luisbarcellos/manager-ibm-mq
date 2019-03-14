@@ -27,12 +27,14 @@ public class FilaController {
     }
 
     @GetMapping("buscar/filaout")
+    @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public List<Mensagem> buscarMensagensFilaOut(@RequestParam(name = "quantidade", required = true, defaultValue = "10") Integer quantidade){
         return filaIbmService.buscarMensagensFilaOut(quantidade);
     }
 
     @GetMapping("buscar/filain")
+    @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public List<Mensagem> buscarMensagensFilaIn(@RequestParam(name = "quantidade", required = true, defaultValue = "10") Integer quantidade){
         return filaIbmService.buscarMensagensFilaIn(quantidade);

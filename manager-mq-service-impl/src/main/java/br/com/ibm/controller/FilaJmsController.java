@@ -20,9 +20,21 @@ public class FilaJmsController {
         filaIbmJmsService.simularFilaIn();
     }
 
+    @PostMapping("transferir/filain-to-filaout")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void transferirMensagensFila(){
+        filaIbmJmsService.transferirMensagensFila();
+    }
+
     @GetMapping("buscar/filain")
     @ResponseBody
     public List<Mensagem> buscarMensagensFilaInJms(@RequestParam(name = "quantidade", required = true, defaultValue = "10") Integer quantidade){
         return filaIbmJmsService.buscarMensagensFilaInJms(quantidade);
+    }
+
+    @GetMapping("buscar/filaout")
+    @ResponseBody
+    public List<Mensagem> buscarMensagensFilaOut(@RequestParam(name = "quantidade", required = true, defaultValue = "10") Integer quantidade){
+        return filaIbmJmsService.buscarMensagensFilaOut(quantidade);
     }
 }

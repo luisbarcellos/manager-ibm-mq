@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.connection.CachingConnectionFactory;
 import org.springframework.jms.core.JmsTemplate;
@@ -51,7 +52,7 @@ public class IntegracaoServiceInJmsModule {
     }
 
     @Bean("jmsTemplateIn")
-//    @Primary
+    @Primary
     public JmsTemplate jmsTemplateIn(@Qualifier("cachingConnectionFactoryIn") CachingConnectionFactory cachingConnectionFactoryIn) {
         JmsTemplate jmsTemplateIn = new JmsTemplate();
         jmsTemplateIn.setConnectionFactory(cachingConnectionFactoryIn);

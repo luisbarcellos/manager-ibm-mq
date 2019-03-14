@@ -1,4 +1,4 @@
-package br.com.ibm.Exception;
+package br.com.ibm.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

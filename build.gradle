@@ -25,13 +25,9 @@ allprojects {
     
     dependencies {
         compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
-        compile "org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}"
         compile 'org.projectlombok:lombok:1.18.6'
 
         testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
         testCompile 'junit:junit:4.12'
-    }
-    configurations {
-        compile.exclude module: "spring-boot-starter-tomcat"
     }
 }

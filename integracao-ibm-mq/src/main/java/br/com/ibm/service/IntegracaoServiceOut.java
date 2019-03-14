@@ -39,8 +39,7 @@ public class IntegracaoServiceOut {
     }
 
     private Function<JMSContext, JMSContext> aplicarContextoFila() {
-//        return context -> jmsConnectionFactoryOut.createContext();
-        return context -> context;
+        return context -> jmsConnectionFactoryOut.createContext();
     }
 
     private Function<JMSContext, JMSContext> aplicarDestinatario() {

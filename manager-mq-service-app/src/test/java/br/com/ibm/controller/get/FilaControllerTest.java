@@ -1,6 +1,5 @@
 package br.com.ibm.controller.get;
 
-import br.com.ibm.Exception.MensagemNotFoundException;
 import br.com.ibm.controller.FilaController;
 import br.com.ibm.controller.stub.MsgStub;
 import org.junit.Test;
