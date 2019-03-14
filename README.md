@@ -69,11 +69,23 @@ Busca a quantidade de dados, especificada no query param, da fila de entrada.
 * Exemplo:
         http://localhost:8080/ibm-fila/buscar/filain?quantidade=1
         
-### 3. Buscar mensagem(ns) Fila Saída
+#### 3.2 Exemplo de Consumo usando JmsTemplate
+* Método:
+
+        GET
+    
+* URL:
+
+        http://localhost:8080/ibm-fila-jms/buscar/filain
+        
+* Exemplo:
+        http://localhost:8080/ibm-fila-jms/buscar/filain?quantidade=1
+        
+### 4. Buscar mensagem(ns) Fila Saída
 
 Busca a quantidade de dados, especificada no query param, da fila de saída.
         
-#### 3.1 Exemplo de Consumo
+#### 4.1 Exemplo de Consumo
 * Método:
 
         GET
@@ -86,7 +98,7 @@ Busca a quantidade de dados, especificada no query param, da fila de saída.
     
         http://localhost:8080/ibm-fila/buscar/filaout?quantidade=1
         
-#### 4 Retornos Esperados
+#### 5 Retornos Esperados
 
 * Response Code: 200
     * Mensagem(ns) buscada(s) com sucesso
