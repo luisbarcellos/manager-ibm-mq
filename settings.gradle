@@ -1,3 +1,4 @@
 rootProject.name = 'manager-mq-service'
 
-include 'manager-mq-service-app', 'manager-mq-service-impl', 'integracao-ibm-mq'
+include 'manager-mq-service-app', 'manager-mq-service-impl', 'integracao-ibm-mq', 'integracao-ibm-mq-jms'
+

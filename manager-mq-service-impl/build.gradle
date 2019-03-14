@@ -1,4 +1,4 @@
 dependencies {
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.9.8'
-    compile project(":integracao-ibm-mq")
+    compile project(":integracao-ibm-mq"), project(":integracao-ibm-mq-jms")
 }

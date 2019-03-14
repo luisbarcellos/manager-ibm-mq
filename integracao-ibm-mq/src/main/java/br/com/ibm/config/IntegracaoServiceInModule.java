@@ -19,7 +19,7 @@ public class IntegracaoServiceInModule {
 
     @Bean
     public IntegracaoServiceIn integracaoServiceIn(IntegracaoPropertiesLoader integracaoPropertiesLoader,
-                                                     @Qualifier("jmsConnectionFactoryIn") JmsConnectionFactory jmsConnectionFactoryIn) {
+                                                   @Qualifier("jmsConnectionFactoryIn") JmsConnectionFactory jmsConnectionFactoryIn) {
         return new IntegracaoServiceIn(integracaoPropertiesLoader, jmsConnectionFactoryIn);
     }
 
@@ -29,7 +29,7 @@ public class IntegracaoServiceInModule {
         try {
             JmsFactoryFactory ff = JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER);
             JmsConnectionFactory cf = ff.createConnectionFactory();
-            // Set the properties
+
             cf.setStringProperty(WMQConstants.WMQ_HOST_NAME, integracaoPropertiesLoader.getHostIn());
             cf.setIntProperty(WMQConstants.WMQ_PORT, integracaoPropertiesLoader.getPortIn());
             cf.setStringProperty(WMQConstants.WMQ_CHANNEL, integracaoPropertiesLoader.getChannelIn());
