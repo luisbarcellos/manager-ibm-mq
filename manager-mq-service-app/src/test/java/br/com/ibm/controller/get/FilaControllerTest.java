@@ -2,6 +2,7 @@ package br.com.ibm.controller.get;
 
 import br.com.ibm.controller.FilaController;
 import br.com.ibm.controller.stub.MsgStub;
+import br.com.ibm.exception.MensagemNotFoundException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
