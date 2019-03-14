@@ -1,5 +1,6 @@
 package br.com.ibm.converter;
 
+import br.com.ibm.exception.ConverterException;
 import br.com.ibm.model.Mensagem;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -10,9 +11,8 @@ public class XmlToObjectConverter {
         try {
             return new XmlMapper().readValue(xml, Mensagem.class);
         } catch (Exception e) {
-            log.error("Erro ao parsear xml to object: " + e.getMessage());
             e.printStackTrace();
+            throw new ConverterException("Erro ao parsear xml to object: " + e.getMessage());
         }
-        return null;
     }
 }
