@@ -1,5 +1,14 @@
 # manager-mq-service
 
+### Utilizado no projeto:
+    *   Spring boot
+    *   Gradle
+    *   Docker
+    *   Fila MQ IBM
+    *   Leitura de arquivo xml
+    *   Paralelismo
+    *   Controle de threads 
+
 ### Passos para rodar o projeto
 ## 1- Subir filas no docker com os comandos abaixo.
 ### Comando para subir docker para o Simular fila Entrada de dados
