@@ -1,5 +1,3 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'application'
 apply plugin: 'org.springframework.boot'
 mainClassName = 'br.com.ibm.Main'

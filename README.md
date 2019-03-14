@@ -7,6 +7,7 @@
     *   Fila MQ IBM
     *   Leitura de arquivo xml
     *   Paralelismo
+    *   Programação funcional 
     *   Controle de threads 
 
 ### Passos para rodar o projeto
@@ -65,6 +66,9 @@ Busca a quantidade de dados, especificada no query param, da fila de entrada.
 
         http://localhost:8080/ibm-fila/buscar/filain
         
+* Exemplo:
+        http://localhost:8080/ibm-fila/buscar/filain?quantidade=1
+        
 ### 3. Buscar mensagem(ns) Fila Saída
 
 Busca a quantidade de dados, especificada no query param, da fila de saída.
@@ -77,6 +81,10 @@ Busca a quantidade de dados, especificada no query param, da fila de saída.
 * URL:
 
         http://localhost:8080/ibm-fila/buscar/filaout
+
+* Exemplo:
+    
+        http://localhost:8080/ibm-fila/buscar/filaout?quantidade=1
         
 #### 4 Retornos Esperados
 
