@@ -53,6 +53,7 @@ public class IntegracaoServiceOutJmsModule {
         JmsTemplate jmsTemplateIn = new JmsTemplate();
         jmsTemplateIn.setConnectionFactory(cachingConnectionFactoryOut);
         jmsTemplateIn.setDefaultDestinationName(integracaoPropertiesLoader.getQueueOut());
+        jmsTemplateIn.setReceiveTimeout(integracaoPropertiesLoader.getTimeOut());
 
         return jmsTemplateIn;
     }

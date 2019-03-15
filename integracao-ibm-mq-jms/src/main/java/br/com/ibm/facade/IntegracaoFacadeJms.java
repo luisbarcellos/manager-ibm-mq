@@ -35,7 +35,7 @@ public class IntegracaoFacadeJms {
     public void mudarMsgFilaInToFilaOut() {
         try {
             new ForkJoinPool(integracaoPropertiesLoader.getNumeroThreads()).submit(() ->
-                    buscarMensagensFilaInJms(integracaoPropertiesLoader.getQtdInicialFilaIn())
+                    buscarMensagensFilaInJms(integracaoPropertiesLoader.getQtdTransferir())
                             .stream()
                             .parallel()
                             .forEach(mensagem -> Optional.ofNullable(integracaoServiceInJms.buscarMensagem())
@@ -49,11 +49,11 @@ public class IntegracaoFacadeJms {
     public List<String> buscarMensagensFilaInJms(Integer quantidade) {
         try {
             return new ForkJoinPool(integracaoPropertiesLoader.getNumeroThreads()).submit(() ->
-                        IntStream.range(0, quantidade)
-                                .parallel()
-                                .mapToObj(i -> integracaoServiceInJms.buscarMensagem())
-                                .filter(Objects::nonNull)
-                                .collect(Collectors.toList())).get();
+                    IntStream.range(0, quantidade)
+                            .parallel()
+                            .mapToObj(i -> integracaoServiceInJms.buscarMensagem())
+                            .filter(Objects::nonNull)
+                            .collect(Collectors.toList())).get();
         } catch (Exception e) {
             e.printStackTrace();
             throw new MensagemJmsException("Erro ao buscar mensagem: " + e.getMessage());

@@ -26,13 +26,11 @@ public class IntegracaoServiceInJmsModule {
     }
 
     @Bean("cachingConnectionFactoryIn")
-//    @Primary
     public CachingConnectionFactory cachingConnectionFactoryIn(@Qualifier("connectionFactoryIn") ConnectionFactory connectionFactoryIn) {
         return new CachingConnectionFactory(connectionFactoryIn);
     }
 
     @Bean("connectionFactoryIn")
-//    @Primary
     public ConnectionFactory connectionFactoryIn(){
         MQConnectionFactory connectionFactoryIn = new MQConnectionFactory();
         try {
@@ -57,6 +55,7 @@ public class IntegracaoServiceInJmsModule {
         JmsTemplate jmsTemplateIn = new JmsTemplate();
         jmsTemplateIn.setConnectionFactory(cachingConnectionFactoryIn);
         jmsTemplateIn.setDefaultDestinationName(integracaoPropertiesLoader.getQueueIn());
+        jmsTemplateIn.setReceiveTimeout(integracaoPropertiesLoader.getTimeOut());
 
         return jmsTemplateIn;
     }

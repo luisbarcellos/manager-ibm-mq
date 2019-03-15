@@ -39,6 +39,15 @@ Insere quantidade de registros configurada no application.properties do projeto 
 * URL:
 
         http://localhost:8080/ibm-fila/simular/filain
+
+#### 1.2 Exemplo de Consumo com JmsTemplate
+* Método:
+ 
+        POST
+        
+* URL:
+
+        http://localhost:8080/ibm-fila-jms/simular/filain
         
 ### 2. Transferir dados
 
@@ -52,6 +61,15 @@ Transfere a quantidade de registros configurada no application.properties do pro
 * URL:
 
         http://localhost:8080/ibm-fila/transferir/filain-to-filaout
+        
+#### 2.1 Exemplo de Consumo com JmsTemplate
+* Método:
+
+        POST
+    
+* URL:
+
+        http://localhost:8080/ibm-fila-jms/transferir/filain-to-filaout
         
 ### 3. Buscar mensagem(ns) Fila Entrada
 
@@ -98,6 +116,19 @@ Busca a quantidade de dados, especificada no query param, da fila de saída.
     
         http://localhost:8080/ibm-fila/buscar/filaout?quantidade=1
         
+#### 4.2 Exemplo de Consumo com JmsTemplate
+* Método:
+
+        GET
+    
+* URL:
+
+        http://localhost:8080/ibm-fila-jms/buscar/filaout
+
+* Exemplo:
+    
+        http://localhost:8080/ibm-fila-jms/buscar/filaout?quantidade=1
+        
 #### 5 Retornos Esperados
 
 * Response Code: 200
@@ -106,3 +137,9 @@ Busca a quantidade de dados, especificada no query param, da fila de saída.
     * Mensagem(ns) inseridas com sucesso
 * Response Code: 404
     * Não foi encontrado mensagens na fila
+    
+## Conclusão:
+
+        A integração com JmsTemplate, foi mais simples de realizar e teve uma melhor performance.
+        
+        Tanto ao testar com pouco ou um grande volume de dados.
